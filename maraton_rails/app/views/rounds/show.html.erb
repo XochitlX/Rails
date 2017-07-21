@@ -23,7 +23,12 @@
     <%= text_field_tag card.id %>  
     </p>
   <%end%>
-  <%= hidden_field_tag(:statistic,value=@answers)%>
+  
+
+  <%= hidden_field_tag(:statistic, value = @final)%>
+
+
+
   <%= f.submit "Mandar Respuestas¡" %>
 <%end%>
 

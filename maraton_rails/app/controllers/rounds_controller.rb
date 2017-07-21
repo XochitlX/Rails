@@ -14,6 +14,14 @@ class RoundsController < ApplicationController
       card_answer << Answer.where(card_id: card.id).sort_by{rand}
     end
     p @answers = card_answer
+    @final = []
+    card_answer.each do |group|
+      group.each do |item|
+        @final << item.status
+      end
+    end
+    p "final***" * 20
+    p @final
   end
 
 end
