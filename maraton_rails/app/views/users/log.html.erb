@@ -1,0 +1,15 @@
+
+<h2> Iniciar Sesión </h2>
+
+<%= form_for :user, :as => :user, :url => users_log_in_path do |f| %>
+  <p>
+    <%= f.label :Email %> <br>
+    <%= f.text_field :email %>  
+  </p>
+  <p>
+    <%= f.label :Password %> <br>
+    <%= f.password_field :password %>  
+  </p>
+  <%= f.submit "Entrar" %>
+  
+<% end %>

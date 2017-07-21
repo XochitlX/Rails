@@ -1,0 +1,15 @@
+
+<h2> Bienvenido Usuario </h2>
+<h4> ¡ <%= @user.name %> ! </h4>
+****************************************************
+<h3> Juega un tema </h3>
+
+
+<% @decks.each do |deck| %>
+  <% user_id = @user.id %>
+  <% deck_id = deck.id %>
+  <%= link_to deck.subject , round_show_path(user_id, deck_id) %> <br>
+<% end %>
+
+
+

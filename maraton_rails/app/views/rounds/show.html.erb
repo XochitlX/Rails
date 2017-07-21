@@ -1,0 +1,30 @@
+
+<h2> A Jugar¡¡... </h2>
+<h4> ¡ <%= @user.name %> ! </h4>
+****************************************************
+<h3> Preguntas:  </h3>
+
+
+
+<%= form_for :statistic, :url => statistic_show_path(@user.id, @deck_id) do |f| %>
+  <% answerss = [] %>
+  <% @cards.each_with_index do |card, index| %>
+    <h5><%= card.text %></h5>
+        
+    <% answer = @answers[index] %>
+    <% @ans = [] %>
+    <% answer.each_with_index do |ans, index_a| %>
+      <%= index_a + 1 %>. <%= ans.option %><br>
+      <% @ans << ans.option %> 
+    <%end%>
+
+    <p>
+   
+    <%= text_field_tag card.id %>  
+    </p>
+  <%end%>
+  <%= hidden_field_tag(:statistic,value=@answers)%>
+  <%= f.submit "Mandar Respuestas¡" %>
+<%end%>
+
+
